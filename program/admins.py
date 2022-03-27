@@ -168,7 +168,7 @@ async def skip(c: Client, m: Message):
 
 
 @Client.on_message(
-    command(["mute", f"mute@{BOT_USERNAME}", "vmute"]) & other_filters
+    command(["mklmute", f"mute@{BOT_USERNAME}", "vmute"]) & other_filters
 )
 @authorized_users_only
 @check_blacklist()
@@ -183,7 +183,7 @@ async def mute(client, m: Message):
             await m.reply_text(
                 f"🔇 **{R('play_mute')}**\n\n"
                 f"• **{R('play_to_unmute')}**\n"
-                f"» /unmute {R('command')}"
+                f"» /mklunmute {R('command')}"
             )
         except Exception as e:
             traceback.print_exc()
@@ -193,7 +193,7 @@ async def mute(client, m: Message):
 
 
 @Client.on_message(
-    command(["unmute", f"unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
+    command(["mklunmute", f"unmute@{BOT_USERNAME}", "vunmute"]) & other_filters
 )
 @authorized_users_only
 @check_blacklist()
