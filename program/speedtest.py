@@ -32,7 +32,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 
-@Client.on_message(command(["speedtest", f"speedtest@{bname}"]) & ~filters.edited)
+@Client.on_message(command(["mklspeedtest", f"speedtest@{bname}"]) & ~filters.edited)
 @sudo_users_only
 async def run_speedtest(_, message: Message):
     m = await message.reply_text(f"⚡️ {R('speedtest_server')}")
